@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "electron ."
+  },
+  "name": "json-store",
+  "version": "1.0.0",
+  "main": "main.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron": "^34.0.2",
+    "electron-store": "^10.0.1"
+  }
+}

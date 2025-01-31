@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Editor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        #main-content {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        #text-area {
+            flex: 1;
+            margin-bottom: 10px;
+            resize: none;
+        }
+        #file-list {
+            flex: 1;
+            margin-top: 10px;
+            overflow-y: auto;
+        }
+        .file-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+        .file-item:hover {
+            background-color: #e0e0e0;
+        }
+        .file-item.active {
+            background-color: #d0d0d0;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <input type="text" id="new-file-input" placeholder="Yeni text">
+        <button id="add-file-btn">Ekle</button>
+        <div id="file-list"></div>
+    </div>
+    <div id="main-content">
+        <textarea id="text-area"></textarea>
+        <div class="button-group">
+            <button id="format-btn">Format JSON</button>
+            <button id="copy-btn">Copy to Clipboard</button>
+            <button id="copy-minified-btn">Copy Minified</button>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html> 

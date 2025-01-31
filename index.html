@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Text Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -15,6 +17,12 @@
             padding: 10px;
             display: flex;
             flex-direction: column;
+        }
+        #new-file-input {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
         #main-content {
             flex: 1;
@@ -35,6 +43,9 @@
         .file-item {
             padding: 5px;
             cursor: pointer;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.1px;
         }
         .file-item:hover {
             background-color: #e0e0e0;
@@ -58,6 +69,18 @@
         button:hover {
             background-color: #45a049;
         }
+        #status-message {
+            padding: 8px;
+            margin-left: auto;
+            color: #666;
+            font-size: 14px;
+        }
+        #status-message.error {
+            color: #f44336;
+        }
+        #status-message.success {
+            color: #4CAF50;
+        }
     </style>
 </head>
 <body>
@@ -72,6 +95,8 @@
             <button id="format-btn">Format JSON</button>
             <button id="copy-btn">Copy to Clipboard</button>
             <button id="copy-minified-btn">Copy Minified</button>
+            <span id="status-message"></span>
+            <button id="save-btn" style="margin-left: auto; background-color: #2196F3;">Kaydet</button>
         </div>
     </div>
     <script src="renderer.js"></script>
